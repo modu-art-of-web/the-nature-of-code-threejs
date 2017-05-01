@@ -23,7 +23,7 @@ export default class Particle {
     }
 
     display() {
-        let sphereGeometry = new THREE.SphereGeometry(10, 32, 32),
+        const sphereGeometry = new THREE.SphereGeometry(10, 32, 32),
             sphereMaterial = new THREE.MeshNormalMaterial({ transparent: true });
 
         this.sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);

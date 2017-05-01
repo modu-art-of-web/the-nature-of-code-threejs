@@ -21,7 +21,7 @@ export function render() {
 
   scene = new THREE.Scene();
 
-  const planeGeometry = new THREE.PlaneGeometry(120, 50);
+  const planeGeometry = new THREE.PlaneGeometry(100, 45);
   const planeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
   const plane = new THREE.Mesh(planeGeometry, planeMaterial);
   plane.receiveShadow = true;

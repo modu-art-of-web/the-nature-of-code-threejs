@@ -5,8 +5,8 @@ let container = document.getElementById('container'),
     width, height,
     page;
 
-const r = 30, // sphere radius
-      length = 600;  // box length
+const r = 20, // sphere radius
+      length = 500;  // box length
 
 function init() {
 
@@ -23,14 +23,14 @@ export function render() {
 
   page = new Page(width, height);
 
-  let box = size(length+2*r, length+2*r, length+2*r);
+  const box = size(length+2*r, length+2*r, length+2*r);
   page.scene.add(box);
 
-  let m = new Mover(length, r);
+  const m = new Mover(length, r);
   m.display();
   page.scene.add(m.sphere);
 
-  let wind1 = new THREE.Vector3(0.1, 0, 0),
+  const wind1 = new THREE.Vector3(0.1, 0, 0),
       wind2 = new THREE.Vector3(0, 0, 0.001),
       gravity = new THREE.Vector3(0, -0.2, 0);
 
@@ -40,7 +40,6 @@ export function render() {
   draw();
 
   page.render(container);
-
   window.addEventListener('resize', onWindowResize, false);
 
   function draw() {

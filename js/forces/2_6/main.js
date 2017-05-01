@@ -7,7 +7,7 @@ let container = document.getElementById('container'),
     page;
 
 const r = 45, // sphere radius
-      length = 600;  // box length
+      length = 500;  // box length
 
 function init() {
 
@@ -24,24 +24,19 @@ export function render() {
 
   page = new Page(width, height);
 
-  let box = size(length+2*r, length+2*r, length+2*r);
-  page.scene.add(box);
-
-  let a = new Attractor(70);
+  const a = new Attractor(70);
   page.scene.add(a.mesh);
 
-  let m = new Mover(length, 10);
+  const m = new Mover(length, 10);
   m.display();
   page.scene.add(m.sphere);
 
   draw(m);
-
   page.render(container);
-
   window.addEventListener('resize', onWindowResize, false);
 
   function draw(m) {
-    let force = a.attract(m);
+    const force = a.attract(m);
     m.applyForce(force);
     m.update();
 

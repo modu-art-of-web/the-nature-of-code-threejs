@@ -6,7 +6,7 @@ let container = document.getElementById('container'),
     page;
 
 const r = 45, // sphere radius
-      length = 600;  // box length
+      length = 500;  // box length
 
 function init() {
 
@@ -23,10 +23,10 @@ export function render() {
 
   page = new Page(width, height);
 
-  let box = size(length+2*r, length+2*r, length+2*r);
+  const box = size(length+2*r, length+2*r, length+2*r);
   page.scene.add(box);
 
-  let wind1 = new THREE.Vector3(0.1, 0, 0),
+  const wind1 = new THREE.Vector3(0.1, 0, 0),
       wind2 = new THREE.Vector3(0, 0, 0.001),
       gravity = new THREE.Vector3(0, -0.2, 0);
 
@@ -34,7 +34,7 @@ export function render() {
   for (let i = 0; i < 10; i++) {
     movers.push(new Mover(length, random(10, r)));
 
-    let m = movers[i];
+    const m = movers[i];
     m.display();
     page.scene.add(m.sphere);
 
@@ -45,14 +45,13 @@ export function render() {
   }
 
   page.render(container);
-
   window.addEventListener('resize', onWindowResize, false);
 
   function draw(m) {
     m.update();
     m.checkEdges();
 
-    window.animateId = requestAnimationFrame(() => { draw(m) });
+    window.animateId = requestAnimationFrame(() => draw(m));
     page.renderer.render(page.scene, page.camera);
   }
 }

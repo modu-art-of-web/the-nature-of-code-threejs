@@ -25,7 +25,6 @@ export function render() {
   draw();
 
   page.render(container);
-
   window.addEventListener('resize', onWindowResize, false);
 
   function draw() {

@@ -10,9 +10,9 @@ export const contents = [{
   example: [
     ['1.1', 'Bouncing ball with no vectors'],
     ['1.2', 'Bouncing ball with PVectors!'],
-    ['1.3', 'Vector subtraction'],
-    ['1.4', 'Multiplying a vector'],
-    ['1.5', 'Vector magnitude'],
+    // ['1.3', 'Vector subtraction'],
+    // ['1.4', 'Multiplying a vector'],
+    // ['1.5', 'Vector magnitude'],
     ['1.7', 'Motion 101 (velocity)'],
     ['1.8', 'Motion 101 (velocity and constant acceleration)']]
 },{
@@ -22,7 +22,7 @@ export const contents = [{
     ['2.1', 'Forces'],
     ['2.2', 'Forces acting on many objects'],
     ['2.3', 'Gravity scaled by mass'],
-    ['2.4', 'Including friction'],
+    // ['2.4', 'Including friction'],
     ['2.5', 'Fluid Resistance'],
     ['2.6', 'Attraction'],
     // ['2.7', 'Attraction with many Movers'],
@@ -52,6 +52,7 @@ export function buildList() {
     count: 3
   });
 
+  let subChapterList = {};
   contents.forEach(({chapter, chapterName, example}) => {
     let $chapterContainerDiv = document.createElement('div');
     // $chapterContainerDiv.className = 'chapter_container opened';
@@ -69,7 +70,6 @@ export function buildList() {
     let $sublistUl = document.createElement('ul');
     $sublistUl.className = 'sublist';
 
-    let subChapterList = {};
     example.forEach(subEl => {
       let $li = document.createElement('li'),
           $a = document.createElement('a');

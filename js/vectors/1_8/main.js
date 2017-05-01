@@ -4,12 +4,11 @@ let container = document.getElementById('container'),
     width, height;
 
 let camera, scene, renderer;
-let group;
 let sphere;
 
 //box distance
-const r = 30,
-      d = 600;
+const r = 20,
+      length = 500;
 
 const topSpeed = 10;
 
@@ -33,15 +32,15 @@ export function render() {
 
   scene = new THREE.Scene();
 
-  group = new THREE.Group();
+  const group = new THREE.Group();
   scene.add(group);
 
-  const boxMesh = new THREE.Mesh(new THREE.BoxGeometry(d+r, d+r, d+r));
+  const boxMesh = new THREE.Mesh(new THREE.BoxGeometry(length+2*r, length+2*r, length+2*r));
   const helper = new THREE.BoxHelper(boxMesh);
   helper.material.color.setHex(0x009da8);  //box wire 색상
   group.add(helper);
 
-  const sphereGeometry = new THREE.SphereGeometry(30, 32, 32);
+  const sphereGeometry = new THREE.SphereGeometry(r, 32, 32);
   const sphereMaterial = new THREE.MeshNormalMaterial();
   sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
@@ -76,22 +75,22 @@ function animate() {
 
   sphere.position.add(velocity);
 
-  if (sphere.position.x > d/2) {
-    sphere.position.x = -d/2;
-  } else if (sphere.position.x < -d/2) {
-    sphere.position.x = d/2;
+  if (sphere.position.x > length/2) {
+    sphere.position.x = -length/2;
+  } else if (sphere.position.x < -length/2) {
+    sphere.position.x = length/2;
   }
 
-  if (sphere.position.y > d/2) {
-    sphere.position.y = -d/2;
-  } else if (sphere.position.y < -d/2) {
-    sphere.position.y = d/2;
+  if (sphere.position.y > length/2) {
+    sphere.position.y = -length/2;
+  } else if (sphere.position.y < -length/2) {
+    sphere.position.y = length/2;
   }
 
-  if (sphere.position.z > d/2) {
-    sphere.position.z = -d/2;
-  } else if (sphere.position.z < -d/2) {
-    sphere.position.z = d/2;
+  if (sphere.position.z > length/2) {
+    sphere.position.z = -length/2;
+  } else if (sphere.position.z < -length/2) {
+    sphere.position.z = length/2;
   }
 
   window.animateId = requestAnimationFrame(animate);
