@@ -1,0 +1,25 @@
+{
+  "name": "the-nature-of-code-threejs",
+  "version": "0.0.1",
+  "description": "project converting [Daniel Shiffman's The Nature of Code] into javascript using three.js",
+  "keywords": [
+    "three.js",
+    "the-nature-of-code"
+  ],
+  "scripts": {
+    "dev": "webpack-dev-server --progress",
+    "build": "rm -rf dist && rm -rf chuncks && NODE_ENV=production webpack"
+  },
+  "author": "Allie Kim",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "~6.2.*",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}

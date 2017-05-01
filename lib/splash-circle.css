@@ -1,0 +1,57 @@
+.splash_circle {
+    display: inline-block;
+    position: relative;
+
+    width: 12px;
+    height: 4px;
+
+    vertical-align: middle;
+}
+
+.splash_circle > div {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    -webkit-animation: splash_circle 1s ease-in-out 0s infinite;
+    animation: splash_circle 1s ease-in-out 0s infinite;
+}
+
+.splash_circle .circle1 {
+    left: 0;
+
+    -webkit-animation-delay: -0.15s;
+    animation-delay: -0.15s;
+}
+
+.splash_circle .circle2 {
+    left: 3px;
+
+    -webkit-animation-delay: -0.28s;
+    animation-delay: -0.28s;
+}
+
+.splash_circle .circle3 {
+    left: 6px;
+
+    -webkit-animation-delay: -0.40s;
+    animation-delay: -0.40s;
+}
+
+.splash_circle .circle4 {
+    left: 9px;
+
+    -webkit-animation-delay: -0.51s;
+    animation-delay: -0.51s;
+}
+
+@-webkit-keyframes splash_circle {
+    from {top: 0;}
+    to {top: 2px;}
+}
+
+@keyframes splash_circle {
+    from {top: 0;}
+    to {top: 2px;}
+}

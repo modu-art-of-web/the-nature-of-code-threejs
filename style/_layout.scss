@@ -1,0 +1,27 @@
+@import "variables";
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#container {
+  margin-left: 300px;
+}
+
+#header_menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  #container {
+    margin-left: 0px;
+  }
+
+  #header_menu {
+    display: block;
+    height: 40px;
+
+    background-color: $light-black;
+  }
+}
