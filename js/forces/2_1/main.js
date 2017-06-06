@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { Page, size, getWidth } from '../../utils';
 import Mover from './mover';
 

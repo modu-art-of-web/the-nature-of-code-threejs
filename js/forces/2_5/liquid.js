@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 export default class Liquid {
 
   constructor(w, h, d, c) {

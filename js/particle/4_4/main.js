@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { Page, getWidth } from '../../utils';
 import ParticleSystem from './particleSystem';
 

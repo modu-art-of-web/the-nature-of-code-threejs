@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { tocWidth } from './toc';
 
 export class Page {

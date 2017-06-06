@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { constrain } from '../../utils';
 
 export default class Attractor {

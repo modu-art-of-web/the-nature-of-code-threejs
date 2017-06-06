@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { random } from '../../utils';
 
 export default class Particle {

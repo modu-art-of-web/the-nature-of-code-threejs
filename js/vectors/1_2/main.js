@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { getWidth } from '../../utils';
 
 let container = document.getElementById('container'),
