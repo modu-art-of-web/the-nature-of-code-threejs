@@ -1,8 +1,8 @@
 # the-nature-of-code-threejs
 
- converting [Daniel Shiffman's The Nature of Code](https://github.com/shiffman/the-nature-of-code-examples) into javascript using [three.js](https://threejs.org/)   
- demo: [http://noc.creativeyeri.com](http://noc.creativeyeri.com/#/vectors/1.1)
----
+converting [Daniel Shiffman's The Nature of Code](https://github.com/shiffman/the-nature-of-code-examples) into javascript using [three.js](https://threejs.org/)   
+demo: [http://noc.creativeyeri.com](http://noc.creativeyeri.com/#/vectors/1.1)
+
 
 ### development
 
