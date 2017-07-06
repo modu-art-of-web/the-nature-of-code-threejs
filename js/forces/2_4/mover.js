@@ -13,9 +13,6 @@ export default class Mover {
     // this.location = new THREE.Vector3(30, 30, 30);
     this.velocity = new THREE.Vector3(0, 0, 0);
     this.acceleration = new THREE.Vector3(0, 0, 0);
-
-    // friction setting
-    this.c = 0.01;
   }
 
   applyForce(force) {
@@ -34,9 +31,7 @@ export default class Mover {
     this.sphere.position.y += this.velocity.y;
     this.sphere.position.z += this.velocity.z;
 
-    // no need to reset.
-    // acceleration is always same in this system.
-    // this.acceleration.multiplyScalar(0);
+    this.acceleration.multiplyScalar(0);
   }
 
   display() {
@@ -67,6 +62,7 @@ export default class Mover {
       // apply friction when hitting plane
       // let friction = this.velocity.clone();
       // friction.x *= -1;
+      // friction.y *= 0;
       // friction.z *= -1;
       // friction.normalize();
       // friction.multiplyScalar(this.c);

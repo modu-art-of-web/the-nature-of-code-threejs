@@ -22,7 +22,7 @@ export const contents = [{
     ['2.1', 'Forces'],
     ['2.2', 'Forces acting on many objects'],
     ['2.3', 'Gravity scaled by mass'],
-    // ['2.4', 'Including friction'],
+    ['2.4', 'Including friction'],
     ['2.5', 'Fluid Resistance'],
     ['2.6', 'Attraction'],
     // ['2.7', 'Attraction with many Movers'],

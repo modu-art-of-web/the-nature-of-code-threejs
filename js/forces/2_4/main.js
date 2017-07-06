@@ -7,7 +7,8 @@ let container = document.getElementById('container'),
     page;
 
 const r = 45, // sphere radius
-      length = 500;  // box length
+      length = 500,  // box length
+      c = 0.02; // friction
 
 function init() {
 
@@ -28,23 +29,17 @@ export function render() {
   page.scene.add(box);
 
   const wind1 = new THREE.Vector3(0.1, 0, 0),
-      wind2 = new THREE.Vector3(0, 0, 0.001);
+        wind2 = new THREE.Vector3(0, 0, 0.001),
+        gravity = new THREE.Vector3(0, -0.2, 0);
 
   let movers = [];
   for (let i = 0; i < 10; i++) {
-    const randomR = random(10, r);
-
-    movers.push(new Mover(length, randomR));
+    movers.push(new Mover(length, random(10, r)));
 
     const m = movers[i];
     m.display();
     page.scene.add(m.sphere);
 
-    const gravity = new THREE.Vector3(0, -0.2, 0);
-
-    m.applyForce(wind1);
-    m.applyForce(wind2);
-    m.applyForce(gravity);
     draw(m);
   }
 
@@ -52,6 +47,16 @@ export function render() {
   window.addEventListener('resize', onWindowResize, false);
 
   function draw(m) {
+    let friction = m.velocity.clone();
+    friction.multiplyScalar(-1);
+    friction.normalize();
+    friction.multiplyScalar(c);
+
+    m.applyForce(wind1);
+    m.applyForce(wind2);
+    m.applyForce(gravity);
+    m.applyForce(friction);
+
     m.update();
     m.checkEdges();
 
